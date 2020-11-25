@@ -5,6 +5,7 @@ const { validateField } = require('../middlewares/field-validator');
 const router = Router();
 
 const { createUser, renewToken, loginUser } = require('../controllers/auth');
+const { validateJWT } = require('../middlewares/validate-jwt');
 
 router.post(
 	'/register',
@@ -27,6 +28,6 @@ router.post(
 	loginUser
 );
 
-router.get('/renew', renewToken);
+router.get('/renew', validateJWT, renewToken);
 
 module.exports = router;
