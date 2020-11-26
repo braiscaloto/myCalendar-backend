@@ -8,7 +8,7 @@ const validateJWT = (req, res, next) => {
 	if (!token) {
 		return res.status(401).json({
 			ok: false,
-			msg: 'Not valid token 2',
+			msg: 'Not valid token',
 		});
 	}
 
