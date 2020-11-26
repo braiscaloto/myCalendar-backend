@@ -4,11 +4,11 @@ const jwt = require('jsonwebtoken');
 
 const validateJWT = (req, res, next) => {
 	const token = req.header('x-token');
-	console.log(token);
+
 	if (!token) {
 		return res.status(401).json({
 			ok: false,
-			msg: 'Not valid token',
+			msg: 'Not valid token 2',
 		});
 	}
 
